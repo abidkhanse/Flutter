@@ -16,7 +16,7 @@ class WeatherScreen extends StatefulWidget {
 class _WeatherScreenState extends State<WeatherScreen> {
 
   final String api_key = "1cd340357663bac58a3ebbc88d059e65";
-  final city = "London";
+  final city = "Stockholm";
 
   @override
   void initState() {
@@ -27,7 +27,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   Future<Map<String, dynamic>> getCurrentWeather() async {
     try {
       final res = await http.get (
-          Uri.parse('https://api.openweathermap.org/data/2.5/forecast?q=London,uk&APPID=1cd340357663bac58a3ebbc88d059e65')
+          Uri.parse('https://api.openweathermap.org/data/2.5/forecast?q=Stockholm&APPID=1cd340357663bac58a3ebbc88d059e65')
       );
 
       final data = jsonDecode(res.body);
@@ -51,8 +51,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
     } else {
       return Icons.sunny;
     }
+  }
 
+  int kelvinToCelsius(String kelvin) {
 
+    double k = double.parse(kelvin);
+    double celsius = k - 273.15;
+
+    return celsius.floor();
   }
 
   @override
@@ -92,7 +98,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
           final data = snapshot.data!;
           final currentWeatherData = data['list'][0];
 
-          final temp = currentWeatherData['main']['temp'];
+          final temp = kelvinToCelsius(currentWeatherData['main']['temp'].toString());
+
           final sky = currentWeatherData['weather'][0]['main'];
 
           final currentPressure = currentWeatherData['main']['pressure'];
@@ -125,7 +132,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         child: Column(
                           children: [
                             Text(
-                              '$temp K',
+                              '$temp °C',
                               style: const TextStyle(
                                 fontSize: 32,
                                 fontWeight: FontWeight.bold,
@@ -147,7 +154,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
               const SizedBox(height: 20),
 
-              const Text('Weather Forecast',
+              const Text('Weather Forecast Stockholm',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold
@@ -179,7 +186,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
                     final timeStamp = data['list'][index+1]['dt_txt'].substring(11, 16).toString();
                     final weatherIcon = getWeatherIcon(data['list'][index]['weather'][0]['main'].toString());
-                    final temperature = data['list'][index+1]['main']['temp'].toString();
+                    final temperature = '${kelvinToCelsius(data['list'][index+1]['main']['temp'].toString())}°C';
 
                     return HourlyForecastItem(weather_time: timeStamp,
                         icon: weatherIcon,

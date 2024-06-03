@@ -47,7 +47,7 @@ class _CurrencyConvertMaterialPageState extends State<CurrencyConvertorMaterial>
                 controller: textEditingController,
                 style: const TextStyle(color: Colors.black),
                 decoration: InputDecoration(
-                    hintText: "Enter amount in Dollars",
+                    hintText: "SEK to PKR",
                     hintStyle: const TextStyle(color: Colors.grey),
                     prefixIcon: const Icon(
                       Icons.attach_money, color: Colors.grey,),
@@ -60,11 +60,12 @@ class _CurrencyConvertMaterialPageState extends State<CurrencyConvertorMaterial>
               ),
             ),
 
-            Container(
+            Container (
+
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(onPressed: () {
                 setState(() {
-                  result = double.parse(textEditingController.text) * 25;
+                  result = double.parse(textEditingController.text) * 26.5;
                 });
               },
                   style: TextButton.styleFrom(
