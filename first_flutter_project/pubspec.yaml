@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_gap: ^1.0.0
   get: ^4.6.6
+  gif: ^2.3.0
 
 
 dev_dependencies:

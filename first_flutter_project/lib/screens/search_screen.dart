@@ -80,7 +80,7 @@ class SearchScreen extends StatelessWidget {
                         image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(
-                              "assets/images/seating.png")
+                              "assets/images/delivery.gif")
                         )
                       ),
                     ),
