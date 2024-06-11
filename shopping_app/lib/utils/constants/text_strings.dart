@@ -13,4 +13,36 @@ class TTexts {
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubTitle = "Abid Khan";
 
+  static const String firstName = "First Name";
+  static const String lastName = "Last Name";
+  static const String email = "E-mail";
+  static const String password = "password";
+  static const String newPassword = "New Password";
+  static const String userName = "User Name";
+  static const String phoneNumber = "Phone number";
+  static const String rememberMe = "Remember me";
+  static const String forgotPassword = "Forgot Password";
+  static const String signIn = "SignIn";
+  static const String createAccount = "Create Account";
+  static const String orSignInWith = "or sign-in with";
+  static const String orSignUpWith = "or sign-up with";
+  static const String iAgreeTo = "I agree to";
+  static const String privacyPolicy = "privacy policy";
+  static const String termsOfUse = "terms of use";
+  static const String verificationCode = "verification code";
+  static const String resendEmail = "resend email";
+
+  static const String loginTitle = "Welcome back";
+  static const String loginSubTitle = "Choose our product";
+  static const String signupTitle = "Let's create your account";
+
+
+
+
+
+
+
+
+
+
 }

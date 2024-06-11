@@ -2,7 +2,6 @@
 import 'package:e_commerce/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gap/flutter_gap.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../../utils/constants/colors.dart';

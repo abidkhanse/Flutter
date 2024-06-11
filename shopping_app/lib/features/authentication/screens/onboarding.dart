@@ -3,11 +3,12 @@ import 'package:e_commerce/utils/constants/image_strings.dart';
 import 'package:e_commerce/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../utils/constants/sizes.dart';
+import '../../../utils/constants/text_strings.dart';
 import '../controllers/onboarding/onboarding_controller.dart';
 import 'onboarding/widgets/on_boarding_dots.dart';
 import 'onboarding/widgets/on_boarding_page.dart';
-import '../../../utils/constants/text_strings.dart';
 import 'onboarding/widgets/on_boarding_skip.dart';
 
 class OnBoardingScreen extends StatelessWidget {
