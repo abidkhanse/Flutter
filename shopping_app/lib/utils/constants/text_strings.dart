@@ -31,6 +31,7 @@ class TTexts {
   static const String termsOfUse = "terms of use";
   static const String verificationCode = "verification code";
   static const String resendEmail = "resend email";
+  static const String and = "and";
 
   static const String loginTitle = "Welcome back";
   static const String loginSubTitle = "Choose our product";

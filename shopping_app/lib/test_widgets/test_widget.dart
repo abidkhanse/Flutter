@@ -4,6 +4,7 @@ class GifDemo extends StatefulWidget {
   const GifDemo({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _GifDemoState createState() => _GifDemoState();
 }
 
@@ -15,14 +16,9 @@ class _GifDemoState extends State<GifDemo> with TickerProviderStateMixin {
   }
 
   @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("GIF Demo")),
+      appBar: AppBar(title: const Text("GIF Demo")),
       body: Center(
         child: Container(
           height: 190,
@@ -39,7 +35,7 @@ class _GifDemoState extends State<GifDemo> with TickerProviderStateMixin {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
         },
-        child: Icon(Icons.play_arrow),
+        child: const Icon(Icons.play_arrow),
       ),
     );
   }
