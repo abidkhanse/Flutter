@@ -14,34 +14,29 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     THelperFunction.isDarkMode(context);
     return Scaffold(
         appBar: AppBar(),
         body: SingleChildScrollView(
             child: Padding(
                 padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Column(children: [
-                  Text(TTexts.signupTitle,
-                      style: Theme.of(context).textTheme.headlineMedium
-                  ),
-                  
-                  const SizedBox(height: TSizes.defaultSpace),
-                  // Form
-                  const SignUpFormWidget(),
-                    
+                child: Column(
+                  children: [
+                    Text(TTexts.signupTitle,
+                        style: Theme.of(context).textTheme.headlineMedium),
+
+                    const SizedBox(height: TSizes.defaultSpace),
+
+                    const SignUpFormWidget(),
+
                     const Gap(TSizes.spaceBtwInputFields),
 
                     DividerWidget(text: TTexts.orSignInWith.capitalize!),
 
                     const Gap(TSizes.spaceBtwInputFields),
-                   
-                    const SocialMediaWidget()
 
-                ],
-           )
-        )
-      )
-    );     
+                    const SocialMediaWidget()
+                  ],
+                ))));
   }
 }

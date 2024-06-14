@@ -36,6 +36,13 @@ class TTexts {
   static const String loginTitle = "Welcome back";
   static const String loginSubTitle = "Choose our product";
   static const String signupTitle = "Let's create your account";
+  static const String confirmYourEmailHeading = "Confirm your e-mail address!";
+  static const String confirmYourEmailSubHeading = "Congrats: Your account is waiting for confirmation";
+  static const String continueMessage = "Continue";
+  static const String yourAccountCreatedTitle = "Your account successfully created!";
+  static const String yourAccountCreatedTitleSubTitle = "Welcome to your Ultimate shoping destination, Your account is now active";
+
+
 
 
 

@@ -1,20 +1,19 @@
 
+import 'package:e_commerce/features/authentication/screens/signup/verify_email.dart';
 import 'package:e_commerce/utils/constants/colors.dart';
 import 'package:e_commerce/utils/constants/sizes.dart';
 import 'package:e_commerce/utils/constants/text_strings.dart';
 import 'package:e_commerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gap/flutter_gap.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SignUpFormWidget extends StatelessWidget {
   const SignUpFormWidget({
     super.key,
-  
   });
-
   
-
   @override
   Widget build(BuildContext context) {
 
@@ -99,7 +98,7 @@ class SignUpFormWidget extends StatelessWidget {
             ),
     
             const Gap(TSizes.spaceBtwInputFields),
-            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: const Text(TTexts.createAccount))),
+            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => const VerifyEmail()) , child: const Text(TTexts.createAccount))),
     
           ],
         ),

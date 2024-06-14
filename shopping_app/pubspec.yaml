@@ -42,4 +42,5 @@ flutter:
     - assets/logos/
     - assets/icons/
     - assets/images/onboarding/
-
+    - assets/images/static/
+    
