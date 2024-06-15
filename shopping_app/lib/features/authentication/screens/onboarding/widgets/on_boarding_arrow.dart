@@ -20,9 +20,9 @@ class OnBoardingArrow extends StatelessWidget {
       bottom: TDeviceUtility.getBottomNavigationBarHeight(),
       child: ElevatedButton(
         onPressed: () => OnBoardingController.instance.nextPage(),
-        style: ElevatedButton.styleFrom (
+        style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
-            backgroundColor: isDark ? TColors.primaryColor : TColors.black),
+            backgroundColor: isDark ? TColors.primary : TColors.black),
         child: const Icon(Iconsax.arrow_right_3),
       ),
     );

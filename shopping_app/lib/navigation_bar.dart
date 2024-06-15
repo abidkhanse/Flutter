@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'features/shop/screens/home/home.dart';
 import 'utils/constants/colors.dart';
 
 class ApplicationNavigationBar extends StatelessWidget {
@@ -45,7 +46,7 @@ class NavigationController extends GetxController {
       const SettingsScreen(),
       const ProfileScreen(),
     */
-    Container(color: TColors.accent),
+    const HomeScreen(),
     Container(color: TColors.grey),
     Container(color: Colors.green),
     Container(color: Colors.red),
