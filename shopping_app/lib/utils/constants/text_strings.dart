@@ -22,6 +22,11 @@ class TTexts {
   static const String phoneNumber = "Phone number";
   static const String rememberMe = "Remember me";
   static const String forgotPassword = "Forgot Password";
+  static const String forgotPasswordSubtitle = "Don't worry, sometime people do forget the password. Just enter you email and we will send you the new password.";
+  static const String passwordResetEmailSent = "Password reset email sent";
+  static const String passwordResetEmailSentSubTitle = "Your password reset email sent to your e-mail address, feel free to change your password.";
+  
+
   static const String signIn = "SignIn";
   static const String createAccount = "Create Account";
   static const String orSignInWith = "or sign-in with";
@@ -30,8 +35,10 @@ class TTexts {
   static const String privacyPolicy = "privacy policy";
   static const String termsOfUse = "terms of use";
   static const String verificationCode = "verification code";
-  static const String resendEmail = "resend email";
+  static const String resendEmail = "Resend email";
   static const String and = "and";
+  static const String submit = "Submit";
+  static const String done = "Done";
 
   static const String loginTitle = "Welcome back";
   static const String loginSubTitle = "Choose our product";

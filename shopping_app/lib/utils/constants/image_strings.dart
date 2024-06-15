@@ -18,5 +18,7 @@ class TImages {
   // -- on-boarding static images
   static const String deliveryEmailImage  = "assets/images/static/delivery-mail.png";
   static const String emailVerificationSuccess  = "assets/images/static/congrats.png";
+  static const String emailSentBlack                 = "assets/images/static/sent-mail.png";
+  static const String emailSentColored               = "assets/images/static/sent-mail-2.png";
 
 }
