@@ -16,9 +16,16 @@ class TImages {
   static const String onBoardingSearch    = "assets/images/onboarding/search.gif";
 
   // -- on-boarding static images
-  static const String deliveryEmailImage  = "assets/images/static/delivery-mail.png";
-  static const String emailVerificationSuccess  = "assets/images/static/congrats.png";
-  static const String emailSentBlack                 = "assets/images/static/sent-mail.png";
-  static const String emailSentColored               = "assets/images/static/sent-mail-2.png";
+  static const String deliveryEmailImage          = "assets/images/static/delivery-mail.png";
+  static const String emailVerificationSuccess    = "assets/images/static/congrats.png";
+  static const String emailSentBlack              = "assets/images/static/sent-mail.png";
+  static const String emailSentColored            = "assets/images/static/sent-mail-2.png";
+
+  static const String promotion_image_1            = "assets/images/promotion/promotion_image_1.jpg";
+  static const String promotion_image_2            = "assets/images/promotion/promotion_image_2.jpg";
+  static const String promotion_image_3            = "assets/images/promotion/promotion_image_3.jpg";
+  static const String promotion_image_4            = "assets/images/promotion/promotion_image_4.jpg";
+
+
 
 }

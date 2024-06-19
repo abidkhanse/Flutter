@@ -1,8 +1,12 @@
 {
+  
     "java.compile.nullAnalysis.mode": "automatic",
     "workbench.tree.indent": 25,
     "workbench.tree.renderIndentGuides": "always",
     "workbench.colorCustomizations": {
         "tree.indentGuidesStroke": "#e1ff00ed"
+    },
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
     }
 }
