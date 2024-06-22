@@ -1,6 +1,6 @@
 import 'package:e_commerce/features/authentication/screens/password_configuration/forgot_password.dart';
-import 'package:e_commerce/features/authentication/screens/signup/signup.dart';
 import 'package:e_commerce/navigation_bar.dart';
+import 'package:e_commerce/test_widgets/test_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -64,7 +64,8 @@ class LoginFormWidget extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
-                    onPressed: () => Get.to(() => const SignupScreen() ), 
+                    //onPressed: () => Get.to(() => const SignupScreen() ), 
+                    onPressed: () => Get.to(() => const GifDemo() ), 
                     child: const Text(TTexts.createAccount))),
 
             const SizedBox(height: TSizes.spaceBtwInputFields),

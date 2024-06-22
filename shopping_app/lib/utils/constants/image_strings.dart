@@ -27,5 +27,17 @@ class TImages {
   static const String promotion_image_4            = "assets/images/promotion/promotion_image_4.jpg";
 
 
+  static const String productImage_1            = "assets/images/products/shoe1.jpg";
+  static const String productImage_2            = "assets/images/products/shoe2.jpg";
+  static const String productImage_3            = "assets/images/products/shoe3.jpg";
+  static const String productImage_4            = "assets/images/products/shoe4.jpg";
+  static const String productImage_5            = "assets/images/products/shoe5.jpg";
+  static const String productImage_6            = "assets/images/products/shoe6.jpeg";
+  static const String productImage_7            = "assets/images/products/shoe7.jpg";
+  static const String productImage_9            = "assets/images/products/shoe9.jpeg";
+  static const String productImage_11           = "assets/images/products/shoe11.png";
+  static const String productImage_12           = "assets/images/products/shoe12.png";
+
+
 
 }
