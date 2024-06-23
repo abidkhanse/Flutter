@@ -2,6 +2,7 @@ import 'package:e_commerce/common/widgets/primary_header_container.dart';
 import 'package:e_commerce/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:e_commerce/common/widgets/search_container.dart';
 import 'package:e_commerce/common/widgets/section_text.dart';
+import 'package:e_commerce/utils/constants/colors.dart';
 import 'package:e_commerce/utils/constants/image_strings.dart';
 import 'package:e_commerce/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -20,10 +21,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
   
     return  Scaffold (
-
       body: SingleChildScrollView (
-
-        child: Column(
+        child: Column (
           children: [
             const PrimaryHeaderContainer (
               child: Column (
@@ -50,9 +49,9 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: Column (
                 children: [
-                  const PromoSlider(images: [TImages.promotion_image_4, TImages.promotion_image_1, TImages.promotion_image_2, TImages.promotion_image_3],),
+                  const PromoSlider(images: [TImages.promotionImage_4, TImages.promotionImage_1, TImages.promotionImage_2, TImages.promotionImage_3],),
                   const Gap(TSizes.spaceBetweenSections),
-
+                  SeactionHeading(title: 'Popular Products', textColor: TColors.black, onPressed: () {}),                  
                   GridLayout(itemCount: 4, itemBuilder: (_, index) => const ProductCardVertical())
                 ],
               ),

@@ -1,7 +1,7 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce/common/widgets/circular_container.dart';
-import 'package:e_commerce/common/widgets/rounded_image.dart';
+import 'package:e_commerce/common/widgets/images/rounded_image.dart';
 import 'package:e_commerce/features/shop/controllers/home_controller.dart';
 import 'package:e_commerce/utils/constants/colors.dart';
 import 'package:e_commerce/utils/constants/sizes.dart';

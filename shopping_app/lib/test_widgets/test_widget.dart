@@ -1,8 +1,8 @@
 import 'package:e_commerce/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
+import '../common/widgets/images/rounded_image.dart';
 import '../common/widgets/rounded_container.dart';
-import '../common/widgets/rounded_image.dart';
 import '../utils/constants/colors.dart';
 import '../utils/constants/image_strings.dart';
 import '../utils/helpers/helper_functions.dart';

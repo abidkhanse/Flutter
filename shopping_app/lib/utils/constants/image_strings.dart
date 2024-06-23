@@ -21,10 +21,10 @@ class TImages {
   static const String emailSentBlack              = "assets/images/static/sent-mail.png";
   static const String emailSentColored            = "assets/images/static/sent-mail-2.png";
 
-  static const String promotion_image_1            = "assets/images/promotion/promotion_image_1.jpg";
-  static const String promotion_image_2            = "assets/images/promotion/promotion_image_2.jpg";
-  static const String promotion_image_3            = "assets/images/promotion/promotion_image_3.jpg";
-  static const String promotion_image_4            = "assets/images/promotion/promotion_image_4.jpg";
+  static const String promotionImage_1            = "assets/images/promotion/promotion_image_1.jpg";
+  static const String promotionImage_2            = "assets/images/promotion/promotion_image_2.jpg";
+  static const String promotionImage_3            = "assets/images/promotion/promotion_image_3.jpg";
+  static const String promotionImage_4            = "assets/images/promotion/promotion_image_4.jpg";
 
 
   static const String productImage_1            = "assets/images/products/shoe1.jpg";
@@ -37,6 +37,8 @@ class TImages {
   static const String productImage_9            = "assets/images/products/shoe9.jpeg";
   static const String productImage_11           = "assets/images/products/shoe11.png";
   static const String productImage_12           = "assets/images/products/shoe12.png";
+
+  static const String clothIcon                 = "assets/icons/cloths.png";
 
 
 

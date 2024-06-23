@@ -1,5 +1,6 @@
 
 import 'package:e_commerce/common/widgets/application_bar.dart';
+import 'package:e_commerce/common/widgets/cart_counter_icon.dart';
 import 'package:e_commerce/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,13 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ApplicationBar(
+      actions: [
+          CartCounterIcon (
+            onPressed: () {}, 
+            count: '10', 
+            iconColor: TColors.white
+          )
+        ],
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

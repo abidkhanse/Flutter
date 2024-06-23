@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import 'features/shop/screens/home/home.dart';
+import 'features/shop/screens/store/store.dart';
 import 'utils/constants/colors.dart';
 
 class ApplicationNavigationBar extends StatelessWidget {
@@ -26,7 +27,7 @@ class ApplicationNavigationBar extends StatelessWidget {
               : TColors.black.withOpacity(0.1),
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Search'),
+            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
             NavigationDestination(icon: Icon(Iconsax.heart), label: 'Settings'),
             NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
           ],
@@ -47,7 +48,7 @@ class NavigationController extends GetxController {
       const ProfileScreen(),
     */
     const HomeScreen(),
-    Container(color: TColors.grey),
+    const StoreScreen(),
     Container(color: Colors.green),
     Container(color: Colors.red),
   ].obs;
