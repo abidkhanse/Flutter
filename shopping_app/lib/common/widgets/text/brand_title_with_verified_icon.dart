@@ -8,6 +8,7 @@ import 'package:iconsax/iconsax.dart';
 import 'brand_title_text.dart';
 
 class BrandTitleWithVerifiedIcon extends StatelessWidget {
+
   const BrandTitleWithVerifiedIcon ( {
       super.key, 
       this.textColor, 

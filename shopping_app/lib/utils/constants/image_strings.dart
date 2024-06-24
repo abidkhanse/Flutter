@@ -39,6 +39,12 @@ class TImages {
   static const String productImage_12           = "assets/images/products/shoe12.png";
 
   static const String clothIcon                 = "assets/icons/cloths.png";
+  static const String clothIcon2                 = "assets/icons/clothes2.png";
+  static const String clothIcon3                 = "assets/icons/clothes3.png";
+
+  static const String shoesIcon1                 = "assets/icons/shoes1.png";
+  static const String shoesIcon2                 = "assets/icons/shoes2.png";
+  static const String shoesIcon3                 = "assets/icons/shoes3.png";
 
 
 

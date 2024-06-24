@@ -32,9 +32,7 @@ class ProductCardVertical extends StatelessWidget {
         ),
         child: Column(
           children: [
-
             RoundedContainer (
-
                 height: 180,
                 padding: const EdgeInsets.all(TSizes.sm),
                 backgroundColor: isDark ? TColors.dark : TColors.light,
@@ -57,36 +55,29 @@ class ProductCardVertical extends StatelessWidget {
                                 .apply(color: TColors.black)),
                       ),
                     ),
-                    const Positioned(
+
+                    const Positioned (
                         top: 0,
                         right: 0,
-                        child: TCircularIcon(
-                            icon: Iconsax.heart5, color: TColors.primary))
+                        child: TCircularIcon (icon: Iconsax.heart5, color: TColors.primary)
+                    )
                   ],
                 )
               ),
             
             const Gap(TSizes.spaceBtwItems / 2),
-            
             const Padding (
-              padding: const EdgeInsets.only(left: TSizes.sm),
+              padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const ProductTitleText(
-                        title: "Black Nike air", smallSize: true),
-                    const Gap(TSizes.spaceBtwItems / 2),
-                    
+                    ProductTitleText(title: "Black Nike air", smallSize: true),
+                    Gap(TSizes.spaceBtwItems / 2),
                     Row (
-
                       children: [
-                        
-                         BrandTitleWithVerifiedIcon(title: 'Hi'),
-           
+                         BrandTitleWithVerifiedIcon(title: 'Nike'),
                       ],
-
                     ),
-
 
                   ]),
             ),
@@ -118,7 +109,6 @@ class ProductCardVertical extends StatelessWidget {
                 )
               ],
             )
-
           ],
         ),
       ),

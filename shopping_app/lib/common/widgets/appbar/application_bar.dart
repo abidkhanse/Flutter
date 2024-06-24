@@ -30,7 +30,7 @@ class ApplicationBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar (
           automaticallyImplyLeading: false,
           leading: showBackArrorw
-              ? IconButton(
+              ? IconButton (
                   onPressed: () => Get.back(),
                   icon: const Icon(Iconsax.arrow_left))
               : leadingIcon != null
