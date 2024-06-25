@@ -38,6 +38,7 @@ class HomeScreen extends StatelessWidget {
                         SeactionHeading ( title: 'Popular Categories', showActionButton: false),
                         Gap(TSizes.spaceBtwItems),
                         HomeCategories(),
+                        Gap(TSizes.spaceBtwItems * 4),
                       ],
                     ),
                   )
