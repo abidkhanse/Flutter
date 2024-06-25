@@ -5,6 +5,7 @@ import 'package:iconsax/iconsax.dart';
 
 import 'features/shop/screens/home/home.dart';
 import 'features/shop/screens/store/store.dart';
+import 'features/shop/screens/wishlist/wishlist.dart';
 import 'utils/constants/colors.dart';
 
 class ApplicationNavigationBar extends StatelessWidget {
@@ -28,7 +29,7 @@ class ApplicationNavigationBar extends StatelessWidget {
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
             NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
-            NavigationDestination(icon: Icon(Iconsax.heart), label: 'Settings'),
+            NavigationDestination(icon: Icon(Iconsax.heart), label: 'Whishlist'),
             NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
           ],
         ),
@@ -49,7 +50,8 @@ class NavigationController extends GetxController {
     */
     const HomeScreen(),
     const StoreScreen(),
-    Container(color: Colors.green),
+    const FavouriteScreen(),
+    //Container(color: Colors.green),
     Container(color: Colors.red),
   ].obs;
 }
