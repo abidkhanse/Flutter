@@ -26,16 +26,14 @@ class SettingScreen extends StatelessWidget {
           children: [
             PrimaryHeaderContainer (
               child: Column (
-                children: [
 
+                children: [
                   ApplicationBar (
                     title: Text('Account', style: Theme.of(context).textTheme.headlineMedium!.apply(color: TColors.white))
                   ),
 
                   TProfileTile(onPressed: () => Get.to(() => const ProfileScreen())),
-
                   const Gap(TSizes.spaceBetweenSections * 2),
-
                 ],
               )
             ),
