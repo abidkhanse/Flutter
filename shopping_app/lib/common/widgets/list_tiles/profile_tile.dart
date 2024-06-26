@@ -8,8 +8,10 @@ import '../images/circular_image.dart';
 
 class TProfileTile extends StatelessWidget {
   const TProfileTile({
-    super.key,
+    super.key, required this.onPressed,
   });
+
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class TProfileTile extends StatelessWidget {
      leading: const CircularImage(image: TImages.userIcon, width: 50, height: 50, padding: 0),
      title: Text('Abid Khan', style: Theme.of(context).textTheme.headlineSmall!.apply(color: TColors.white)),
      subtitle : Text('support@khan.com', style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.white)),
-     trailing: IconButton(onPressed: () {}, icon: const Icon(Iconsax.edit, color: TColors.white))
+     trailing: IconButton(onPressed: onPressed, icon: const Icon(Iconsax.edit, color: TColors.white))
                       );
   }
 }

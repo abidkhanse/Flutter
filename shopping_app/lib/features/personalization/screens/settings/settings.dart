@@ -7,7 +7,10 @@ import 'package:e_commerce/utils/constants/colors.dart';
 import 'package:e_commerce/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../profile/profile.dart';
 
 class SettingScreen extends StatelessWidget {
 
@@ -29,15 +32,17 @@ class SettingScreen extends StatelessWidget {
                     title: Text('Account', style: Theme.of(context).textTheme.headlineMedium!.apply(color: TColors.white))
                   ),
 
-                  const TProfileTile(),
+                  TProfileTile(onPressed: () => Get.to(() => const ProfileScreen())),
+
                   const Gap(TSizes.spaceBetweenSections * 2),
+
                 ],
               )
             ),
 
             Padding (
               padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: Column(
+              child: Column (
                 children: [
 
                   const SeactionHeading(title: 'Account setiings', textColor: TColors.black, showActionButton: false ),
@@ -52,12 +57,11 @@ class SettingScreen extends StatelessWidget {
                   TSettingsMenuTitle (icon: Iconsax.security_card, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts', onTap: (){} ),
 
                   const Gap(TSizes.spaceBetweenSections),
-
                   const SeactionHeading(title: 'Configuration', textColor: TColors.black, showActionButton: false ),
 
                   const Gap(TSizes.spaceBtwItems),
-
                   TSettingsMenuTitle (icon: Iconsax.document_upload, title: 'Load Data', subTitle: 'Upload Data to your Cloud Firebase', onTap: (){} ),
+                  
                   TSettingsMenuTitle (
                     icon: Iconsax.location, 
                     title: 'Geolocation', 
@@ -79,9 +83,9 @@ class SettingScreen extends StatelessWidget {
                     trailing: Switch(value: true, onChanged: (value) => {})
                   ),
 
-                  const Gap(TSizes.spaceBetweenSections),
+                  const Gap (TSizes.spaceBetweenSections) ,
                   
-                  SizedBox(
+                  SizedBox (
                     width: double.infinity,
                     child: OutlinedButton(onPressed: () {}, child: const Text('Logout'),),
                   ),
@@ -89,7 +93,6 @@ class SettingScreen extends StatelessWidget {
                   const Gap(TSizes.spaceBetweenSections * 2.5),
 
                 ],
-
               ),
             )
           ]
