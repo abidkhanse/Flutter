@@ -27,7 +27,7 @@ class THelperFunction {
       case 'black':
         return Colors.black;
       default:
-        return Colors.white;
+        return null;
     }
   }
 
