@@ -3,9 +3,11 @@ import 'package:e_commerce/utils/constants/colors.dart';
 import 'package:e_commerce/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
+import '../product_review/product_reviews.dart';
 import 'widgets/bottom_add_to_cart.dart';
 import 'widgets/product_attributes.dart';
 import 'widgets/product_image_with_slider.dart';
@@ -70,7 +72,8 @@ class ProductDetailsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const SeactionHeading(title: 'Review (199)', textColor: TColors.black, showActionButton: false),
-                      IconButton(onPressed: (){}, icon: const Icon(Iconsax.arrow_right_3, size: 18)),
+                      IconButton(
+                        onPressed: () => Get.to(() => const TProductReviews()), icon: const Icon(Iconsax.arrow_right_3, size: 18)),
                     ],
                   ),
                 ],
