@@ -3,6 +3,7 @@ import 'package:e_commerce/common/widgets/list_tiles/profile_tile.dart';
 import 'package:e_commerce/common/widgets/list_tiles/settings_menu_title.dart';
 import 'package:e_commerce/common/widgets/primary_header_container.dart';
 import 'package:e_commerce/common/widgets/section_text.dart';
+import 'package:e_commerce/features/personalization/screens/address/address.dart';
 import 'package:e_commerce/utils/constants/colors.dart';
 import 'package:e_commerce/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -46,8 +47,8 @@ class SettingScreen extends StatelessWidget {
                   const SeactionHeading(title: 'Account setiings', textColor: TColors.black, showActionButton: false ),
                   const Gap(TSizes.spaceBetweenSections),
                   
-                  TSettingsMenuTitle (icon: Iconsax.safe_home, title: 'My addresses', subTitle: 'Set shopping delivery address', onTap: (){} ),
-                  TSettingsMenuTitle (icon: Iconsax.shopping_cart, title: 'My cart', subTitle: 'Add/Remove products and move to checkout', onTap: (){} ),
+                  TSettingsMenuTitle (icon: Iconsax.safe_home, title: 'My addresses', subTitle: 'Set shopping delivery address', onTap: () => Get.to(() => const UserAddressScreen())),
+                  TSettingsMenuTitle (icon: Iconsax.shopping_cart, title: 'My cart', subTitle: 'Add/Remove products and move to checkout', onTap: (){}),
                   TSettingsMenuTitle (icon: Iconsax.bag_tick, title: 'My Orders', subTitle: 'In Progress and Completed orders', onTap: (){} ),
                   TSettingsMenuTitle (icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account', onTap: (){} ),
                   TSettingsMenuTitle (icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discounted coupons', onTap: (){} ),
