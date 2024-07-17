@@ -38,7 +38,7 @@ class TImages {
   static const String productImage_11           = "assets/images/products/shoe11.png";
   static const String productImage_12           = "assets/images/products/shoe12.png";
 
-  static const String clothIcon                 = "assets/icons/cloths.png";
+  static const String clothIcon                  = "assets/icons/cloths.png";
   static const String clothIcon2                 = "assets/icons/clothes2.png";
   static const String clothIcon3                 = "assets/icons/clothes3.png";
 
@@ -47,6 +47,11 @@ class TImages {
   static const String shoesIcon3                 = "assets/icons/shoes3.png";
 
   static const String userIcon                   = "assets/icons/boy.png";
+
+  static const String applePay                   = "assets/icons/payment_methods/apple-pay.png";
+  static const String payPal                     = "assets/icons/payment_methods/paypal.png";
+  static const String creditCard                 = "assets/icons/payment_methods/credit-card.png";
+  static const String paymentSuccessful          = "assets/icons/payment_methods/transaction.png";
 
 
 

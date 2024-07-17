@@ -26,7 +26,6 @@ class CartItem extends StatelessWidget {
           backgroundColor: THelperFunction.isDarkMode(context) ? TColors.darkGrey : TColors.light,
         ),
         const Gap(TSizes.spaceBtwItems),
-    
         Expanded (
           child: Column (
             mainAxisSize: MainAxisSize.min,
@@ -45,7 +44,6 @@ class CartItem extends StatelessWidget {
                       text: 'Green ',
                       style: Theme.of(context).textTheme.bodyLarge,
                     ),
-                    
                     TextSpan (
                       text: 'Size ',
                       style: Theme.of(context).textTheme.bodySmall,
@@ -56,7 +54,6 @@ class CartItem extends StatelessWidget {
                     )
                   ]
                 )
-                
               )
             ],
           ),

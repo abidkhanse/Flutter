@@ -37,9 +37,10 @@ class TCategoryTab extends StatelessWidget {
                   textColor: TColors.black,
                   onPressed: () {}),
               const Gap(TSizes.spaceBtwItems),
-              GridLayout(
+              GridLayout (
                   itemCount: 4,
-                  itemBuilder: (_, index) => const ProductCardVertical())
+                  itemBuilder: (_, index) => const ProductCardVertical()
+              )
             ],
           ),
         ),
