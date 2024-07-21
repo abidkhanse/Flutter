@@ -80,7 +80,6 @@ class ProductCardVertical extends StatelessWidget {
                          BrandTitleWithVerifiedIcon(title: 'Nike'),
                       ],
                     ),
-
                   ]),
             ),
 

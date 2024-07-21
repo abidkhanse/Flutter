@@ -1,8 +1,10 @@
 
 import 'package:e_commerce/common/widgets/vertical_image_and_text.dart';
+import 'package:e_commerce/features/shop/screens/sub_category/sub_category.dart';
 import 'package:e_commerce/utils/constants/colors.dart';
 import 'package:e_commerce/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 
 class HomeCategories extends StatelessWidget {
@@ -19,10 +21,11 @@ class HomeCategories extends StatelessWidget {
         itemCount: 6,
         scrollDirection: Axis.horizontal,
         itemBuilder: (_, index) {
-          return VerticalImageAndText(
+          return VerticalImageAndText (
             image: TImages.emailSentColored,
             title: "Facebook",
-            onTapp: () {}, textColor: TColors.white,
+            onTapp: () => Get.to( () => const SubCategoryScreen()), 
+            textColor: TColors.white,
           );
         },
       ),

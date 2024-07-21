@@ -5,10 +5,12 @@ import 'package:e_commerce/common/widgets/layout/grid_layout.dart';
 import 'package:e_commerce/common/widgets/products/product_cards/brand_card.dart';
 import 'package:e_commerce/common/widgets/search_container.dart';
 import 'package:e_commerce/common/widgets/section_text.dart';
+import 'package:e_commerce/features/shop/screens/all_brands/all_brands.dart';
 import 'package:e_commerce/utils/constants/sizes.dart';
 import 'package:e_commerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 
 import '../../../../utils/constants/colors.dart';
 import 'widget/category_tab.dart';
@@ -18,9 +20,9 @@ class StoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController (
+    return DefaultTabController(
       length: 5,
-      child: Scaffold (
+      child: Scaffold(
           appBar: ApplicationBar(
               title: Text('Store',
                   style: Theme.of(context).textTheme.headlineMedium),
@@ -29,9 +31,7 @@ class StoreScreen extends StatelessWidget {
                     onPressed: () {}, count: '5', iconColor: TColors.dark)
               ]),
           body: NestedScrollView(
-      
               headerSliverBuilder: (_, innerScrollableBox) {
-            
                 return [
                   SliverAppBar(
                     automaticallyImplyLeading: false,
@@ -47,61 +47,49 @@ class StoreScreen extends StatelessWidget {
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
                           children: [
-
                             /// -- search bar
                             const Gap(TSizes.spaceBtwItems),
                             const SearchContainer(
                                 text: 'Seach in store',
                                 showBorder: true,
                                 showBackground: false,
-                            padding: EdgeInsets.zero),
+                                padding: EdgeInsets.zero),
                             const Gap(TSizes.spaceBetweenSections),
-      
+
                             /// -- heading
-                            SeactionHeading (
+                            SeactionHeading(
                                 title: 'Featured Brands',
                                 textColor: TColors.black,
-                                onPressed: () {}
-                            ),
-      
-                             /// -- Brand Grid
+                                onPressed: () =>
+                                    Get.to(() => const AllBrandsScreen())),
+
+                            /// -- Brand Grid
                             const Gap(TSizes.spaceBetweenSections / 1.5),
-                            GridLayout(itemCount: 4, mainAxisExtent: 80, itemBuilder: (_, index) {
-                            
-                              return const TBrandCard(showBorder: true);
-                            
-                            })
+                            GridLayout(
+                                itemCount: 4,
+                                mainAxisExtent: 80,
+                                itemBuilder: (_, index) {
+                                  return const TBrandCard(showBorder: true);
+                                })
                           ],
-                        )
-                      ),
-                      bottom: const TTabBar(
-                        tabs: [
-      
-                          Tab(child: Text('Sports')),
-                          Tab(child: Text('Furniture')),
-                          Tab(child: Text('Electronics')),
-                          Tab(child: Text('Clothes')),
-                          Tab(child: Text('Chosmetics')),
-      
-                        ]
-                      ),
-            
+                        )),
+                    bottom: const TTabBar(tabs: [
+                      Tab(child: Text('Sports')),
+                      Tab(child: Text('Furniture')),
+                      Tab(child: Text('Electronics')),
+                      Tab(child: Text('Clothes')),
+                      Tab(child: Text('Chosmetics')),
+                    ]),
                   )
                 ];
               },
-              body: const TabBarView (
-
-                children: [
-
-                  TCategoryTab(),
-                  TCategoryTab(),
-                  TCategoryTab(),
-                  TCategoryTab(),
-                  TCategoryTab(),
-                  
-                ]
-              ))),
+              body: const TabBarView(children: [
+                TCategoryTab(),
+                TCategoryTab(),
+                TCategoryTab(),
+                TCategoryTab(),
+                TCategoryTab(),
+              ]))),
     );
   }
 }
-
