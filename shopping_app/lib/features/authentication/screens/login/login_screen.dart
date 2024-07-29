@@ -22,23 +22,24 @@ class LoginScreen extends StatelessWidget {
         padding: SpacingStyle.paddingWithAppBarHeight,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image (height: 150, image: AssetImage (isDark ? TImages.lightAppLogo : TImages.darkAppLogo)),
-                Text(TTexts.loginTitle, style: Theme.of(context).textTheme.headlineMedium),
+                Image(
+                    height: 150,
+                    image: AssetImage(
+                        isDark ? TImages.lightAppLogo : TImages.darkAppLogo)),
+                Text(TTexts.loginTitle,
+                    style: Theme.of(context).textTheme.headlineMedium),
                 const SizedBox(height: TSizes.sm),
-                Text(TTexts.loginSubTitle, style: Theme.of(context).textTheme.bodyMedium),
+                Text(TTexts.loginSubTitle,
+                    style: Theme.of(context).textTheme.bodyMedium),
               ],
             ),
             const LoginFormWidget(),
-
             const DividerWidget(text: TTexts.orSignInWith),
-
             const SizedBox(height: TSizes.spaceBtwInputFields),
-
             const SocialMediaWidget()
           ],
         ),

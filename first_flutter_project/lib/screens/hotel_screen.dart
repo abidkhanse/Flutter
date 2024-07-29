@@ -30,8 +30,11 @@ class HotelScreen extends StatelessWidget {
         children: [
 
           Container(
+        
             height: 180,
+        
             decoration: BoxDecoration (
+        
               borderRadius: BorderRadius.circular(AppLayout.getWidth(12, context)),
               color: Styles.primaryColor,
               image: DecorationImage (
@@ -39,13 +42,21 @@ class HotelScreen extends StatelessWidget {
                 image: AssetImage('assets/images/${hotel['image']}')
               )
             ),
+        
           ),
+
           const Gap(15),
+          
           Text(hotel['place'], style: Styles.headlineStyle2.copyWith(color: Colors.grey),),
+          
           const Gap(5),
+          
           Text(hotel['destination'], style: Styles.headlineStyle3.copyWith(color: Colors.white),),
+          
           const Gap(8),
+          
           Text("\$${hotel['price']}/night", style: Styles.headlineStyle1.copyWith(color: Colors.grey),)
+        
         ],
       ),
     );

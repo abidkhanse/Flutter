@@ -12,34 +12,29 @@ class TProductReviews extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold (
-      
-      appBar: ApplicationBar(title: Text('Reviews and Rating'), showBackArrorw: true,),
-
-      body: SingleChildScrollView (
-        child: Padding (
-          padding: EdgeInsets.all(TSizes.defaultSpace),
-          child: Column (
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-
-              Text('Ratings and reviews are verified and are from people who use the same type of produc'),
-              Gap(TSizes.spaceBtwItems),
-              OverallProductRating(),
-              
-              TRatingBarIndicator(rating: 3.5),
-              Text('12,123', style: Theme.of(context).textTheme.bodySmall),
-              const Gap(TSizes.spaceBetweenSections),
-              UserReviewCard(),
-              UserReviewCard(),
-              UserReviewCard(),
-
-            ]
-          ),
+    return Scaffold(
+      appBar: const ApplicationBar(
+        title: Text('Reviews and Rating'),
+        showBackArrorw: true,
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const Text(
+                'Ratings and reviews are verified and are from people who use the same type of produc'),
+            const Gap(TSizes.spaceBtwItems),
+            const OverallProductRating(),
+            const TRatingBarIndicator(rating: 3.5),
+            Text('12,123', style: Theme.of(context).textTheme.bodySmall),
+            const Gap(TSizes.spaceBetweenSections),
+            const UserReviewCard(),
+            const UserReviewCard(),
+            const UserReviewCard(),
+          ]),
         ),
       ),
     );
   }
 }
-
-
