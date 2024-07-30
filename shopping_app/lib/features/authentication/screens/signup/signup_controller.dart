@@ -1,7 +1,7 @@
 import 'package:e_commerce/common/widgets/loaders/loaders.dart';
 import 'package:e_commerce/data/repositories/authentication/authentication_repository.dart';
 import 'package:e_commerce/data/repositories/user/user_repository.dart';
-import 'package:e_commerce/utils/constants/image_strings.dart';
+import 'package:e_commerce/features/authentication/screens/signup/verify_email.dart';
 import 'package:e_commerce/utils/popups/full_screen_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,15 +27,18 @@ class SignupController extends GetxController {
 
   signup() async {
     try {
-      FullScreenLoader.openLoadingDialog(
-          'We are processing your information', TImages.productImage_1);
-
       final isConnected = await NetworkManager.instance.isConnected();
 
-      if (!isConnected) return;
+      if (!isConnected) {
+        LoadingDialog.hide();
+        return;
+      }
 
       // Form Validation
-      if (!signupFormKey.currentState!.validate()) return;
+      if (!signupFormKey.currentState!.validate()) {
+        LoadingDialog.hide();
+        return;
+      }
 
       // Privacy policy
       if (!privacyPolicy.value) {
@@ -45,6 +48,9 @@ class SignupController extends GetxController {
         );
         return;
       }
+
+      LoadingDialog.show();
+      //'We are processing your information', TImages.onRegisteration);
 
       final credentials = await AuthenticationRepository.instance
           .registerWithEmailAndPassword(
@@ -61,11 +67,19 @@ class SignupController extends GetxController {
       );
 
       final userRepository = Get.put(UserRepository());
-      userRepository.save(newUser);
+
+      await userRepository.save(newUser);
+
+      LoadingDialog.hide();
+
+      Loaders.successSnackBar(
+          title: 'Congratulations',
+          message: 'Your account has been successfully created.');
+
+      Get.to(() => const VerifyEmail());
     } catch (e) {
+      LoadingDialog.hide();
       Loaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
-    } finally {
-      FullScreenLoader.closeLoadingDialog();
     }
   }
 }

@@ -19,19 +19,6 @@ class UserModel {
     required this.profileImage,
   });
 
-  // Convert a UserModel object into a Map object
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'firstName': firstName,
-      'lastName': lastName,
-      'userName': userName,
-      'email': email,
-      'phoneNumber': phoneNumber,
-      'profileImage': profileImage,
-    };
-  }
-
   // Create a UserModel from a Map object
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
