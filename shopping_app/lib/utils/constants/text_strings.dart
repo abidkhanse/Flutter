@@ -52,6 +52,6 @@ class TTexts {
   static const String continueMessage = "Continue";
   static const String yourAccountCreatedTitle =
       "Your account successfully created!";
-  static const String yourAccountCreatedTitleSubTitle =
+  static const String yourAccountCreatedSubTitle =
       "Welcome to your Ultimate shoping destination, Your account is now active";
 }

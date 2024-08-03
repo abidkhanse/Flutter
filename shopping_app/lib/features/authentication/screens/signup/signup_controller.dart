@@ -28,7 +28,6 @@ class SignupController extends GetxController {
   signup() async {
     try {
       final isConnected = await NetworkManager.instance.isConnected();
-
       if (!isConnected) {
         LoadingDialog.hide();
         return;
@@ -50,7 +49,6 @@ class SignupController extends GetxController {
       }
 
       LoadingDialog.show();
-      //'We are processing your information', TImages.onRegisteration);
 
       final credentials = await AuthenticationRepository.instance
           .registerWithEmailAndPassword(
@@ -76,7 +74,7 @@ class SignupController extends GetxController {
           title: 'Congratulations',
           message: 'Your account has been successfully created.');
 
-      Get.to(() => const VerifyEmail());
+      Get.to(() => VerifyEmailScreen(email: emailController.text.trim()));
     } catch (e) {
       LoadingDialog.hide();
       Loaders.errorSnackBar(title: 'Oh Snap', message: e.toString());

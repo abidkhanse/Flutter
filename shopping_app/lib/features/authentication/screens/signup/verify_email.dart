@@ -1,5 +1,5 @@
-import 'package:e_commerce/common/widgets/email_verification_success.dart';
-import 'package:e_commerce/features/authentication/screens/login/login_screen.dart';
+import 'package:e_commerce/data/repositories/authentication/authentication_repository.dart';
+import 'package:e_commerce/features/authentication/screens/signup/verify_email_controller.dart';
 import 'package:e_commerce/utils/constants/image_strings.dart';
 import 'package:e_commerce/utils/constants/sizes.dart';
 import 'package:e_commerce/utils/constants/text_strings.dart';
@@ -7,19 +7,22 @@ import 'package:e_commerce/utils/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 
-class VerifyEmail extends StatelessWidget {
-  const VerifyEmail({super.key});
+class VerifyEmailScreen extends StatelessWidget {
+  const VerifyEmailScreen({super.key, this.email});
+  final String? email;
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(VerifyEmailController());
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-              onPressed: () => Get.offAll(() => const LoginScreen()),
+              onPressed: () => AuthenticationRepository.instance.logout(),
               icon: const Icon(CupertinoIcons.clear))
         ],
       ),
@@ -36,7 +39,7 @@ class VerifyEmail extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineMedium,
                   textAlign: TextAlign.center),
               const Gap(TSizes.spaceBetweenSections),
-              Text("support@example.com",
+              Text(email ?? '',
                   style: Theme.of(context).textTheme.labelLarge,
                   textAlign: TextAlign.center),
               const Gap(TSizes.spaceBetweenSections),
@@ -46,23 +49,16 @@ class VerifyEmail extends StatelessWidget {
               const Gap(TSizes.spaceBetweenSections),
               SizedBox(
                   width: double.infinity,
-                  child: ElevatedButton (
-                    onPressed: () => Get.to(
-                      () => SuccessScreen (
-                        image: TImages.emailVerificationSuccess,
-                        title: TTexts.yourAccountCreatedTitle,
-                        subTitle: TTexts.yourAccountCreatedTitleSubTitle,
-                        onPressed: () => Get.offAll(() => const LoginScreen()),
-                        
-                      ),
-                    ),
-                    child: const Text(TTexts.continueMessage))),
-
+                  child: ElevatedButton(
+                      onPressed: () =>
+                          controller.checkEmailVerificationStatus(),
+                      child: const Text(TTexts.continueMessage))),
               const Gap(TSizes.spaceBetweenSections),
               SizedBox(
                   width: double.infinity,
                   child: TextButton(
-                      onPressed: () {}, child: const Text(TTexts.resendEmail))),
+                      onPressed: () => controller.sendEmailVerification(),
+                      child: const Text(TTexts.resendEmail))),
               const Gap(TSizes.spaceBetweenSections),
             ],
           ),

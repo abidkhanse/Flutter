@@ -5,18 +5,18 @@ import 'package:get/get.dart';
 class LoadingDialog {
   static void show() {
     Get.dialog(
-      GestureDetector(
-        onTap: () {}, // Prevent dismiss on tap
-        child: Dialog(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          child: Center(
-            child: Image.asset(TImages.onRegisteration),
+        GestureDetector(
+          onTap: () {}, // Prevent dismiss on tap
+          child: Dialog(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            child: Center(
+              child: Image.asset(TImages.onRegisteration),
+            ),
           ),
         ),
-      ),
-      barrierDismissible: false,
-    );
+        barrierDismissible: false,
+        name: 'loading..');
   }
 
   static void hide() {

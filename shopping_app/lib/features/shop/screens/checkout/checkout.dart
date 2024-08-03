@@ -61,7 +61,8 @@ class Checkout extends StatelessWidget {
                         image: TImages.paymentSuccessful,
                         title: 'Payment Success!',
                         subTitle: 'Your item will be shipped soon',
-                        onPressed: () => Get.offAll(() => const ApplicationNavigationBar())),
+                        onPressed: () =>
+                            Get.offAll(() => const ApplicationNavigationBar())),
                   ),
               child: const Text('Checkout 264.0')),
         ));
