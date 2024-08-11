@@ -8,7 +8,12 @@ import 'package:flutter_gap/flutter_gap.dart';
 import 'package:get/get.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key, required this.image, required this.title, required this.subTitle, required this.onPressed});
+  const SuccessScreen(
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.subTitle,
+      required this.onPressed});
 
   final String image, title, subTitle;
   final VoidCallback onPressed;

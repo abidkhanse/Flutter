@@ -1,6 +1,7 @@
 import 'package:e_commerce/common/widgets/loaders/loaders.dart';
 import 'package:e_commerce/data/repositories/authentication/authentication_repository.dart';
 import 'package:e_commerce/features/authentication/controllers/connectivity/network_manager.dart';
+import 'package:e_commerce/features/personalization/controllers/user_controller.dart';
 import 'package:e_commerce/utils/popups/full_screen_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,6 +15,7 @@ class LoginController extends GetxController {
   final password = TextEditingController();
 
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final userController = Get.put(UserController());
 
   @override
   void onInit() {
@@ -25,7 +27,6 @@ class LoginController extends GetxController {
   Future<void> emailAndPasswordSignIn() async {
     try {
       LoadingDialog.show();
-
       final isConnected = await NetworkManager.instance.isConnected();
 
       if (!isConnected) {
@@ -43,13 +44,34 @@ class LoginController extends GetxController {
         localStorage.write('REMEMBER_MY_PASSWORD', password.text.trim());
       }
 
-      final result =
-          await AuthenticationRepository.instance.loginWithEmailAndPassword(
-        email.text.trim(),
-        password.text.trim(),
-      );
+      final result = await AuthenticationRepository.instance
+          .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       LoadingDialog.hide();
+
+      AuthenticationRepository.instance.screenRedirect();
+    } catch (e) {
+      LoadingDialog.hide();
+      Loaders.errorSnackBar(title: 'Oh..', message: e.toString());
+    }
+  }
+
+  Future<void> googleSignin() async {
+    try {
+      //LoadingDialog.show();
+
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        LoadingDialog.hide();
+        return;
+      }
+
+      final userCredentials =
+          await AuthenticationRepository.instance.signInWithGoogle();
+
+      await userController.saveUserRecord(userCredentials);
+
+      // LoadingDialog.hide();
 
       AuthenticationRepository.instance.screenRedirect();
     } catch (e) {
