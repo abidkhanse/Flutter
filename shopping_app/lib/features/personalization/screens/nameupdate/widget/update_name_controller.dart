@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/user_controller.dart';
+import '../../profile/profile.dart';
 
 class UpdateNameController extends GetxController {
   static UpdateNameController get instace => Get.find();
@@ -58,7 +59,7 @@ class UpdateNameController extends GetxController {
           title: 'Congratulations!',
           message: 'you have successfully updated your name');
 
-      //Get.off(() => const ProfileScreen());
+      Get.off(() => const ProfileScreen());
     } catch (e) {
       LoadingDialog.hide();
       Loaders.errorSnackBar(title: 'Oh...', message: e.toString());
