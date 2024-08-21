@@ -9,6 +9,7 @@ import 'package:e_commerce/utils/popups/full_screen_loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../authentication/models/user_model.dart';
 import '../screens/profile/re_authenticate_user_login_form.dart';
@@ -40,23 +41,27 @@ class UserController extends GetxController {
 // Check why it cannot save the user details
   Future<void> saveUserRecord(UserCredential? userCredentials) async {
     try {
-      if (userCredentials != null) {
-        final nameParts =
-            UserModel.nameParts(userCredentials.user!.displayName ?? '');
-        final userName =
-            UserModel.generateUserName(userCredentials.user!.displayName);
+      await fetchUserRecord();
 
-        final user = UserModel(
-            id: userCredentials.user!.uid,
-            firstName: nameParts[0],
-            lastName:
-                nameParts.length > 1 ? nameParts.sublist(1).join(' ') : '',
-            userName: userName,
-            email: userCredentials.user!.email ?? '',
-            phoneNumber: userCredentials.user!.phoneNumber ?? '',
-            profileImage: userCredentials.user!.photoURL?.toString() ?? '');
+      if (user.value.id.isEmpty) {
+        if (userCredentials != null) {
+          final nameParts =
+              UserModel.nameParts(userCredentials.user!.displayName ?? '');
+          final userName =
+              UserModel.generateUserName(userCredentials.user!.displayName);
 
-        await userRepository.save(user);
+          final user = UserModel(
+              id: userCredentials.user!.uid,
+              firstName: nameParts[0],
+              lastName:
+                  nameParts.length > 1 ? nameParts.sublist(1).join(' ') : '',
+              userName: userName,
+              email: userCredentials.user!.email ?? '',
+              phoneNumber: userCredentials.user!.phoneNumber ?? '',
+              profileImage: userCredentials.user!.photoURL?.toString() ?? '');
+
+          await userRepository.save(user);
+        }
       }
     } catch (e) {
       Loaders.warningSnackBar(
@@ -144,6 +149,28 @@ class UserController extends GetxController {
     } catch (e) {
       LoadingDialog.hide();
       Loaders.errorSnackBar(title: 'Oh..', message: e.toString());
+    }
+  }
+
+  uploadUserProfilePicture() async {
+    try {
+      final image = await ImagePicker().pickImage(
+          source: ImageSource.gallery,
+          imageQuality: 70,
+          maxHeight: 512,
+          maxWidth: 512);
+      if (image != null) {
+        final imageUrl =
+            await userRepository.uploadImage('Users/Images/Profile/', image);
+        Map<String, dynamic> json = {'profileImage': imageUrl};
+        await userRepository.updateSingleField(json);
+        user.value.profileImage = imageUrl;
+        user.refresh();
+        Loaders.successSnackBar(
+            title: 'Success..', message: 'Image has been uploaded');
+      }
+    } catch (e) {
+      Loaders.errorSnackBar(title: 'Oh..', message: 'Unable to upload image');
     }
   }
 }

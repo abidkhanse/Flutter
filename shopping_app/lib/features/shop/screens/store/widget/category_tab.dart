@@ -2,6 +2,7 @@ import 'package:e_commerce/common/widgets/layout/grid_layout.dart';
 import 'package:e_commerce/common/widgets/products/product_cards/brand_showcase.dart';
 import 'package:e_commerce/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:e_commerce/common/widgets/section_text.dart';
+import 'package:e_commerce/features/shop/models/category_model.dart';
 import 'package:e_commerce/utils/constants/colors.dart';
 import 'package:e_commerce/utils/constants/image_strings.dart';
 import 'package:e_commerce/utils/constants/sizes.dart';
@@ -11,16 +12,16 @@ import 'package:gap/gap.dart';
 class TCategoryTab extends StatelessWidget {
   const TCategoryTab({
     super.key,
+    required this.category,
   });
+
+  final CategoryModel category;
 
   @override
   Widget build(BuildContext context) {
-
-    return ListView (
-
+    return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      
       children: [
         Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
@@ -37,10 +38,9 @@ class TCategoryTab extends StatelessWidget {
                   textColor: TColors.black,
                   onPressed: () {}),
               const Gap(TSizes.spaceBtwItems),
-              GridLayout (
+              GridLayout(
                   itemCount: 4,
-                  itemBuilder: (_, index) => const ProductCardVertical()
-              )
+                  itemBuilder: (_, index) => const ProductCardVertical())
             ],
           ),
         ),

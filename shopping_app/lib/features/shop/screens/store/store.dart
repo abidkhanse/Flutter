@@ -13,6 +13,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 import '../../../../utils/constants/colors.dart';
+import '../../controllers/category_conroller.dart';
 import 'widget/category_tab.dart';
 
 class StoreScreen extends StatelessWidget {
@@ -20,8 +21,10 @@ class StoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categories = CategoryConroller.instance.featuredCategoies;
+
     return DefaultTabController(
-      length: 5,
+      length: categories.length,
       child: Scaffold(
           appBar: ApplicationBar(
               title: Text('Store',
@@ -73,23 +76,17 @@ class StoreScreen extends StatelessWidget {
                                 })
                           ],
                         )),
-                    bottom: const TTabBar(tabs: [
-                      Tab(child: Text('Sports')),
-                      Tab(child: Text('Furniture')),
-                      Tab(child: Text('Electronics')),
-                      Tab(child: Text('Clothes')),
-                      Tab(child: Text('Chosmetics')),
-                    ]),
+                    bottom: TTabBar(
+                        tabs: categories
+                            .map((cat) => Tab(child: Text(cat.name)))
+                            .toList()),
                   )
                 ];
               },
-              body: const TabBarView(children: [
-                TCategoryTab(),
-                TCategoryTab(),
-                TCategoryTab(),
-                TCategoryTab(),
-                TCategoryTab(),
-              ]))),
+              body: TabBarView(
+                  children: categories
+                      .map((category) => TCategoryTab(category: category))
+                      .toList()))),
     );
   }
 }

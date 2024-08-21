@@ -7,7 +7,7 @@ class UserModel {
   final String userName;
   final String email;
   final String phoneNumber;
-  final String profileImage;
+  String profileImage;
 
   UserModel({
     required this.id,
